@@ -49,6 +49,7 @@
 
 - Create a new C# Script and name it "PlayerMovement"
   - Explain that script names must not have spaces in them
+ 
 ![Create C# Script](ReadmeImages/CreatePlayerMovement.png)
 - Open the script in visual studio
   - Ensure that the name of the class matches the name of the file, or the script will not compile
