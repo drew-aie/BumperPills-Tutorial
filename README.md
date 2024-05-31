@@ -23,6 +23,7 @@
 > Games aren't much fun without a player, let's get one in the scene
 
 - Create a capsule in the heirarchy
+
 ![Capsule](ReadmeImages/Capsule.png)
   - Name it "Player"
   - Reset its transform so that it is at origin with no rotation and a scale of 1
