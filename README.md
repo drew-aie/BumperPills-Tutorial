@@ -119,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
 public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 1000;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -197,6 +198,8 @@ public class PlayerMovement : MonoBehaviour
 
 ### (Optional) Remove double jumping
 > Flying can be fun! Stopping it is somewhat involved, and in the interest of keeping the game simple I chose to just leave it in.
+>
+> Preventing a double jump involves a ground check and potentially getting into collision layers. If there's time, feel free.
 
 ### Create a second player
 > Double the players, double the fun
@@ -205,11 +208,17 @@ public class PlayerMovement : MonoBehaviour
 - Create three boolean variables at the top of Update called `leftInput`, `rightInput`, and `jumpInput`
 - If `IsPlayerOne` is true, set these booleans to player one's keys, and if not, then player two's
 ```cs
+    public float Speed = 1000;
+    public float JumpForce = 300;
+    public bool IsPlayerOne = true;
+    // ...
+
     void Update()
     {
         bool leftInput;
         bool rightInput;
         bool jumpInput;
+
         if (IsPlayerOne)
         {
             leftInput = Input.GetKey(KeyCode.A);
@@ -257,6 +266,15 @@ public class PlayerMovement : MonoBehaviour
     }
 ```
 - Return to the Unity editor
+- Drag the player into the project view to make it a prefab
 - Duplicate the player
 - Set `IsPlayerOne` to false on the second player
 - We have local multiplayer!
+- Don't forget to prefab the player so we can make changes to both!
+
+### Add some knockback
+> Games are more fun if there's a bit of risk involved, so let's give the players a way to fight each other
+
+- Create a new C# Script called PlayerKnockback
+- Open it up in Visual Studio
+- Remove the default code

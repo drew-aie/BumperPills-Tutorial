@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
         bool leftInput;
         bool rightInput;
         bool jumpInput;
+
         if (IsPlayerOne)
         {
             leftInput = Input.GetKey(KeyCode.A);
